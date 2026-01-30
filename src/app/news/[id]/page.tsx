@@ -43,10 +43,10 @@ export default function NewsDetailPage() {
               ))}
             </ul>
           )} */}
-          {data.image2 && (
+          {data.image && (
             <div className="relative w-full h-[240px] md:h-[420px] rounded-xl overflow-hidden mt-4">
               <Image
-                src={data.image2}
+                src={data.image}
                 alt={`${data.title} зураг 2`}
                 fill
                 sizes="(max-width:768px) 100vw, 66vw"

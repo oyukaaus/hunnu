@@ -47,14 +47,16 @@ export default function NewsSection() {
                 </div>
               </div>
             </Link>
-          ))} 
+          ))}
         </div>
 
         {/* CTA BUTTON */}
         <div className="mt-16 flex justify-center">
           <Link href="/news">
-            <span className="inline-flex items-center justify-center rounded-full bg-[#009fda] px-8 py-4 text-sm font-semibold text-white transition hover:bg-[#007fb0]">
-              EXPLORE MORE NEWS AND FEATURES
+            <span className="inline-flex items-center justify-center rounded-full bg-[#009fda] px-8 py-4 text-sm font-semibold text-white transition hover:bg-[#007fb0] ">
+              {currentLang === "mn"
+                ? "МЭДЭЭ, МЭДЭЭЛЭЛ ДЭЛГЭРЭНГҮЙ"
+                : "EXPLORE MORE NEWS AND FEATURES"}
             </span>
           </Link>
         </div>

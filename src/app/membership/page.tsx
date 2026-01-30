@@ -26,17 +26,15 @@ const steps = [
 export default function MembershipPage() {
   return (
     <div className="bg-white max-w-[1400px] mx-auto rounded-[24px] shadow-md overflow-hidden">
-      {/* HERO */}
-      <div className="relative h-[280px] bg-gradient-to-b from-[#0067c8] to-[#00a2e0] rounded-b-3xl">
-        <div className="max-w-[1400px] mx-auto px-6 h-full flex items-end pb-10">
-          <h1 className="text-white text-3xl md:text-4xl font-bold border-l-4 border-white pl-5">
-            Membership
-          </h1>
-        </div>
-      </div>
+      {/* ===== HERO / BANNER ===== */}
+
+      <h1 className="text-[#17458f] text-3xl md:text-4xl font-bold border-l-4 border-white pl-5 py-8">
+        Membership
+      </h1>
+
 
       {/* CONTENT */}
-      <section className="max-w-[900px] mx-auto px-6 py-16">
+      <section className="max-w-[900px] mx-auto px-6 ">
         {/* Intro */}
         <h2 className="text-sm font-semibold tracking-wide text-gray-500 uppercase mb-3">
           How our membership works

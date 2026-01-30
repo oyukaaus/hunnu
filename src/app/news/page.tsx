@@ -17,7 +17,7 @@ export default function HomePage() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-4 md:py-16 lg:py-16">
+    <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-4 ">
       {/* SECTION TITLE */}
       <div className="mb-8">
         <h2 className="text-sm lg:text-xl md:text-xl font-semibold tracking-wide uppercase">
@@ -100,7 +100,7 @@ export default function HomePage() {
       </div>
 
       {/* PHOTO NEWS */}
-      <div className="py-12">
+      <div className="mt-4">
         <div className="mb-8">
           <h2 className="text-sm lg:text-xl md:text-xl font-semibold tracking-wide uppercase">
             Photo news
@@ -128,7 +128,6 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-        <div className="mt-2 h-px w-full  mb-6" />
         <Modal
           open={showModal}
           footer={null}

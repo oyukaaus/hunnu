@@ -3,24 +3,43 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 interface HeroSectionProps {
-  title?: string;
-  subtitle?: string;
-  ctaText?: string;
-  ctaHref?: string;
   images?: string[];
   interval?: number; // ms
 }
 
+const HERO_TEXT = {
+  en: {
+    title: "Rotary Club of Hunnu",
+    subtitle:
+      "Rotary Club of Hunnu was officially chartered on November 11, 2023, in Ulaanbaatar, receiving its charter from Rotary International. The club is a daughter club of Tuul Rotary Club and consists of 22 members from diverse professional backgrounds.",
+    ctaText: "TAKE ACTION WITH US",
+    ctaHref: "/membership",
+  },
+  mn: {
+    title: "Хүннү Ротари Клуб",
+    subtitle:
+      "Хүннү Ротари Клуб нь Улаанбаатар хотод 2023 оны 11-р сарын 11-ны өдөр ОУ-ын Ротари Ерөнхийлөгч R.Mclnally-аас албан ёсоор батламж гардан авч үүсгэн байгуулагдсан. Хүннү Ротари Клуб нь Туул Ротари Клубээс салбарласан охин Клуб юм. Салбар салбарын манлайлагч 11 эрэгтэй, 11 эмэгтэй буюу нийт 22 гишүүдээс бүрдсэн.",
+    ctaText: "Бидэнтэй нэгдэх",
+    ctaHref: "/membership",
+  },
+};
+
 export default function HeroSection({
-  title = "We are People of Action",
-  subtitle = "Hunnu Rotary Club was officially chartered on November 11, 2023, in Ulaanbaatar, receiving its charter from Rotary International. The club is a daughter club of Tuul Rotary Club and consists of 22 members from diverse professional backgrounds.",
-  ctaText = "TAKE ACTION WITH US",
-  ctaHref = "/membership",
-  images = ["/images/hero/1.png","/images/hero/4.jpeg", "/images/hero/5.jpg", "/images/hero/6.jpg" ],
+  images = [
+    "/images/hero/1.png",
+    "/images/hero/4.jpeg",
+    "/images/hero/5.jpg",
+    "/images/hero/6.jpg",
+  ],
   interval = 6000,
 }: HeroSectionProps) {
+  const pathname = usePathname();
+  const currentLang = pathname.startsWith("/mn") ? "mn" : "en";
+  const content = HERO_TEXT[currentLang];
+
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -51,30 +70,26 @@ export default function HeroSection({
         </div>
       ))}
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40" />
-
-      {/* Content */}
       {/* Content */}
       <div className="relative z-10 h-full flex items-end justify-center px-6 pb-24">
         <div className="max-w-3xl text-center text-white">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-6">
-            {title}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+            {content.title}
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg opacity-90 mb-10 leading-relaxed">
-            {subtitle}
+            {content.subtitle}
           </p>
 
-          <Link href={ctaHref}>
+          <Link href={content.ctaHref}>
             <span className="inline-flex items-center justify-center rounded-full border border-white px-8 py-3 text-sm font-semibold tracking-wide transition hover:bg-white hover:text-black">
-              {ctaText}
+              {content.ctaText}
             </span>
           </Link>
         </div>
       </div>
 
-      {/* Indicators (optional but nice) */}
+      {/* Indicators */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         {images.map((_, i) => (
           <span

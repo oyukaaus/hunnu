@@ -1,5 +1,6 @@
 "use client";
 import { newsEN } from "@/components/sections/news.en";
+import { news } from "@/data/dummy";
 // import { news } from "@/data/dummy";
 import Image from "next/image";
 import { notFound, useParams, useRouter } from "next/navigation";

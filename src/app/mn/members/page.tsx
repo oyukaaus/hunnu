@@ -1,5 +1,5 @@
 "use client";
-import { members } from "@/data/dummy";
+import { membersMN } from "@/data/dummy";
 import { Card, Modal } from "antd";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,15 +12,10 @@ export default function AboutPage() {
   return (
     <div className="bg-white max-w-[1400px] mx-auto rounded-[24px] shadow-md overflow-hidden">
       {/* ===== HERO / BANNER ===== */}
-      <div className="relative h-[260px] w-full bg-gradient-to-b from-[#0e4a6f] to-black  mb-16  overflow-hidden">
-        <div className="absolute inset-0 " />
 
-        <div className="relative z-10 max-w-[1400px] mx-auto px-6 h-full flex flex-col justify-center text-white ">
-          <button className="text-white text-[26px] font-inter-bold px-5  border-l-4 border-white text-left mt-20">
-            Удирдах зөвлөл
-          </button>
-        </div>
-      </div>
+      <h1 className="text-[#17458f] text-3xl md:text-4xl font-bold border-l-4 border-white pl-5 py-16">
+        Манай гишүүд
+      </h1>
 
       {/* ===== CONTENT ===== */}
       <section className="max-w-[1400px] mx-auto px-6 mb-16 grid grid-cols-1 lg:grid-cols-4 gap-10">
@@ -30,7 +25,7 @@ export default function AboutPage() {
             <div className="max-w-[1400px] mx-auto px-4">
               {/* GRID */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                {members.map((m, i) => (
+                {membersMN.map((m, i) => (
                   <Card
                     key={i}
                     hoverable
@@ -59,7 +54,7 @@ export default function AboutPage() {
                     </h3>
                     <p className="text-sm text-gray-600 mt-1">{m.role}</p>
 
-                    <p className="text-sm text-gray-500 mt-3">{m.email}</p>
+                    {/* <p className="text-sm text-gray-500 mt-3">{m.email}</p> */}
                   </Card>
                 ))}
               </div>
@@ -82,7 +77,7 @@ export default function AboutPage() {
                       <Image
                         src={selected.image}
                         alt={selected.name}
-                           sizes="(max-width: 768px) 96px, 128px"
+                        sizes="(max-width: 768px) 96px, 128px"
                         fill
                         className="object-cover"
                       />
@@ -111,7 +106,7 @@ export default function AboutPage() {
                         {selected.education.map(
                           (edu: string, index: number) => (
                             <li key={index}>{edu}</li>
-                          )
+                          ),
                         )}
                       </ul>
                     </div>
@@ -127,7 +122,7 @@ export default function AboutPage() {
                         {selected.experience.map(
                           (exp: string, index: number) => (
                             <li key={index}>{exp}</li>
-                          )
+                          ),
                         )}
                       </ul>
                     </div>
@@ -138,34 +133,29 @@ export default function AboutPage() {
           </Modal>
         </div>
 
-        {/* ===== RIGHT SIDEBAR ===== */}
-        <aside className="lg:col-span-1 hidden sm:inline">
-          <div className="bg-gradient-to-b from-[#0E4A6F] to-[#083B5C] text-white rounded-xl p-6 shadow-lg">
-            <h4 className="text-lg font-semibold mb-4">Холбооны тухай</h4>
-
-            <ul className="space-y-3 text-md">
-              <li key="1">
-                <Link
-                  href="about"
-                  className="block hover:text-[#d94128] transition text-gray-200"
-                >
+        {/* RIGHT SIDEBAR */}
+        <aside className="hidden lg:block">
+          <div className="bg-[#f6f7f9] rounded-xl p-6 shadow-lg sticky">
+            <h4 className="text-lg font-semibold mb-5 text-[#17458f]">
+              Клубын тухай
+            </h4>
+            <ul className="space-y-3 text-[#17458f]">
+              <li>
+                <Link href="/about" className="hover:text-[#ffd2c2]">
                   • Танилцуулга
                 </Link>
               </li>
-              <li key="2">
+              <li>
                 <Link
-                  href="policy"
-                  className="block hover:text-[#d94128] transition text-gray-200"
+                  href="/timeline"
+                  className="hover:text-[#ffd2c2] font-medium"
                 >
-                  • Холбооны дүрэм
+                  • Түүхэн замнал
                 </Link>
               </li>
-              <li key="3">
-                <Link
-                  href="board"
-                  className="block hover:text-[#d94128] transition  font-bold text-gray-200"
-                >
-                  • Удирдах зөвлөл
+              <li>
+                <Link href="/members" className="hover:text-[#ffd2c2]">
+                  • Гишүүд
                 </Link>
               </li>
             </ul>

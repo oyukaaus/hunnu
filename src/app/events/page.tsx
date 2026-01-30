@@ -7,14 +7,11 @@ import Image from "next/image";
 export default function AboutPage() {
   return (
     <div className="bg-white max-w-[1400px] mx-auto rounded-[24px] shadow-md overflow-hidden">
-      {/* HERO */}
-      <div className="relative h-[280px] bg-gradient-to-b from-[#0067c8] to-[#00a2e0] rounded-b-3xl">
-        <div className="max-w-[1400px] mx-auto px-6 h-full flex items-end pb-10">
-          <h1 className="text-white text-3xl md:text-4xl font-bold border-l-4 border-white pl-5">
+      {/* ===== HERO / BANNER ===== */}
+
+          <h1 className="text-[#17458f] text-3xl md:text-4xl font-bold border-l-4 border-white pl-5 mt-8">
             Events
           </h1>
-        </div>
-      </div>
 
       {/* CONTENT */}
       <section className="max-w-[1400px] mx-auto px-4 md:px-6 py-10">
@@ -38,7 +35,7 @@ export default function AboutPage() {
               </div>
 
               {/* TITLE */}
-              <h3 className="font-semibold text-lg leading-snug mb-1 h-14 overflow-hidden">
+              <h3 className="font-semibold text-lg leading-snug mb-1 h-10 overflow-hidden">
                 {event.name}
               </h3>
 

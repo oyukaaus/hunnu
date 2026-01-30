@@ -1,10 +1,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import HeroSection from "@/components/sections/HeroSection";
 import NewsSection from "@/components/sections/NewsSection";
 import ImpactSection from "@/components/sections/ImpactSection";
 import GetInvolvedSection from "@/components/sections/GetInvolvedSection";
+import HeroSection from "@/components/sections/HeroSection";
 
 export default function HomePage() {
   const router = useRouter();
