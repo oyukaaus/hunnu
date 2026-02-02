@@ -9,9 +9,9 @@ export default function AboutPage() {
     <div className="bg-white max-w-[1400px] mx-auto rounded-[24px] shadow-md overflow-hidden">
       {/* ===== HERO / BANNER ===== */}
 
-          <h1 className="text-[#17458f] text-3xl md:text-4xl font-bold border-l-4 border-white pl-5 mt-8">
-            Events
-          </h1>
+      <h1 className="text-[#17458f] text-3xl md:text-4xl font-bold border-l-4 border-white pl-5 mt-8">
+        Events
+      </h1>
 
       {/* CONTENT */}
       <section className="max-w-[1400px] mx-auto px-4 md:px-6 py-10">
@@ -35,14 +35,12 @@ export default function AboutPage() {
               </div>
 
               {/* TITLE */}
-              <h3 className="font-semibold text-lg leading-snug mb-1 h-10 overflow-hidden">
+              <h3 className="font-semibold text-sm md:text-md lg:text-lg leading-snug mb-1 h-10 lg:h-16 overflow-hidden">
                 {event.name}
               </h3>
 
               {/* DATE */}
-              <p className="text-xs text-gray-500 mb-2">
-                {event.date}
-              </p>
+              <p className="text-xs text-gray-500 mb-2">{event.date}</p>
 
               {/* DESCRIPTION */}
               <p className="text-sm text-gray-700 leading-relaxed line-clamp-3">
