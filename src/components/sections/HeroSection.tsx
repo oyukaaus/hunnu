@@ -32,9 +32,9 @@ export default function HeroSection({
     "/images/hero/6.jpg",
     "/images/hero/7.jpg",
     "/images/hero/8.jpg",
-    // "/images/hero/9.jpg",
     "/images/hero/10.jpg",
     "/images/hero/11.jpg",
+    "/images/hero/9.jpg",
   ],
   interval = 6000,
 }: HeroSectionProps) {
@@ -55,31 +55,34 @@ export default function HeroSection({
   return (
     <section className="relative max-w-[1400px] mx-auto h-[70vh] min-h-[520px] max-h-[820px] overflow-hidden rounded-xl shadow-lg">
       {/* Background images */}
-      {images.map((src, index) => (
-        <div
-          key={src}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === current ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <Image
-            src={src}
-            alt="Hero background"
-            fill
-            priority={index === 0}
-            className="object-cover"
-          />
-        </div>
-      ))}
+        {images.map((src, index) => (
+    <div
+      key={src}
+      className={`absolute inset-0 transition-opacity duration-1000 ${
+        index === current ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <Image
+        src={src}
+        alt="Hero background"
+        fill
+        priority={index === 0}
+        className="object-cover"
+      />
+    </div>
+  ))}
+
+  {/* 🔥 Overlay */}
+  <div className="absolute inset-0 z-[5] bg-gradient-to-t from-black/50 via-black/30 to-black/10" />
+
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-end justify-center px-6 pb-24">
         <div className="max-w-3xl text-center text-white">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 drop-shadow-lg">
             {content.title}
           </h1>
-
-          <p className="text-sm sm:text-base md:text-lg opacity-90 mb-10 leading-relaxed">
+<p className="text-sm sm:text-base md:text-lg opacity-95 mb-10 leading-relaxed backdrop-blur-[2px]">
             {content.subtitle}
           </p>
 

@@ -36,7 +36,7 @@ export default function GetInvolvedSection({
     <section className="max-w-[1400px] mx-auto bg-white">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[520px] py-16">
         {/* LEFT: CONTENT */}
-        <div className="bg-[#008c8c] flex items-center justify-center px-6 py-16">
+        <div className="bg-[#17458f] flex items-center justify-center px-6 py-16">
           <div className="max-w-md text-center text-white">
             <h2 className="text-2xl sm:text-3xl font-light mb-6">
               {content.title}
